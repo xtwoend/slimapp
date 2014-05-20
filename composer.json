@@ -1,0 +1,27 @@
+{	
+	"name": "Slim/Starter",
+    "description": "MVC Slim starter",
+    "authors": [
+        {
+            "name": "Abdul Hafidz Anshari",
+            "homepage": "http://anshari-abdul.com",
+            "email": "aditans88@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "slim/slim": "2.*",
+        "slim/views":"*",
+        "twig/twig": "*",
+        "twig/extensions": "*",
+       	"itsgoingd/slim-facades": "dev-master",
+       	"itsgoingd/slim-services": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Controllers": "app/",
+            "Models": "app/"
+        }
+    }
+
+}
