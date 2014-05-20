@@ -1,6 +1,5 @@
 <?php
 
-
 /**
 * path dir
 *
@@ -19,12 +18,19 @@ $path_config = APP_PATH. '/config';
 $config = new Config($path_config);
 
 $appconfig['app'] = $config->get('app');
-$appconfig['app']['cookies'] = $config->get('cookies');
-$appconfig['app']['database'] = $config->get('database');
 $appconfig['app']['templates.path'] = $config->get('view.views');
 
 $appconfig['twig']['debug'] = $config->get('view.debug');
 $appconfig['twig']['cache'] = $config->get('view.cache');
+
+/** Merge db config to slim config */
+foreach ($config->get('database') as $configKey => $configVal) {
+    $appconfig['app']['database.'.$configKey] = $configVal;
+}
+/** Cookies config **/
+foreach($config->get('cookies') as $configKey => $configVal){
+    $appconfig['app']['cookies.'.$configKey] = $configVal;
+}
 
 /**
  * Initialize Slim application

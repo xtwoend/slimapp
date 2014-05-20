@@ -15,7 +15,9 @@
         "twig/twig": "*",
         "twig/extensions": "*",
        	"itsgoingd/slim-facades": "dev-master",
-       	"itsgoingd/slim-services": "dev-master"
+       	"itsgoingd/slim-services": "dev-master",
+        "illuminate/database" : "4.1.*",
+        "cartalyst/sentry": "2.1.*"
     },
     "autoload": {
         "psr-0": {
